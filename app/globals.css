@@ -1,33 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Sevillana&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 1rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background: #131313;
+  color: #dedede;
+}
+
+* {
+  font-family: "SUSE";
+}
+
+/* OPEN FOR WORK STATUS */
+
+.work-status {
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #131313;
+  color: #00ad34; /* #00ad34 OR #ff3030 */
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
+  80% {
+    opacity: .5;
+  }
+}
+
+/* --------- */
+
+.special {
+  font-family: "Sevillana";
+  letter-spacing: normal !important;
+  text-transform: capitalize !important;
+  color: #131313;
+}
+
+.sevFont {
+  font-family: "Sevillana";
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  word-spacing: 0.15em;
+}
+
+.input {
+  word-spacing: 0.25em;
+  text-transform: capitalize;
+  letter-spacing: -0.1em;
+  font-size: 1em;
+}
+
+.projTXT {
+  font-family: "Sevillana";
+}
+
+.projGAP {
+  word-spacing: 0.25em;
+}
+
+Button {
+  word-spacing: 0.25em;
+}
+
+.social:hover .img {
+  filter: grayscale(0);
+}
+
+.GAP {
+  word-spacing: 0.25em;
+}
+
+.img {
+  filter: grayscale(100%);
+  transition: all ease .5s;
+}
+
+.img:hover{
+  filter: grayscale(0);
+}
+
+.stack:hover .img {
+  filter: grayscale(0);
+}
+
+.guests:hover .img {
+  filter: grayscale(0);
+}
+
+.link {
+  transition: all .3s ease;
+}
+
+.marqueeTXT {
+  font-family: "Sevillana";
+  letter-spacing: normal !important;
+  text-transform: capitalize !important;
+  color: #dedede;
+}
+
+.transition {
+  transition: ease all .3s !important;
 }
