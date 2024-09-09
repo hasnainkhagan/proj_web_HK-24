@@ -1,6 +1,4 @@
-import {
-  RegisterLink
-} from "@kinde-oss/kinde-auth-nextjs/components";
+import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,7 +8,7 @@ import { Form } from "../components/Form";
 import prisma from "../lib/db";
 import { revalidatePath } from "next/cache";
 import { Suspense } from "react";
-import { LoadingMessages } from "../components/LoadingState";
+import { GBFormLoading, LoadingMessages } from "../components/LoadingState";
 import { unstable_noStore as noStore } from "next/cache";
 
 async function getGBEntry() {
@@ -40,7 +38,7 @@ export default function GuestbookPage() {
     <section className="max-w-7xl w-full px-4 md:px-8 mx-auto mb-6">
       <h1 className="sevFont text-4xl lg:text-6xl pt-5">Guestbook</h1>
       <p className="title leading-7 text-muted-foreground lg:mt-2 sm:mt-1 tracking-[-.1em] uppercase lg:text-2xl sm:text-xl">
-        Sign my{" "}
+        Sign my
         <span className="sevFont capitalize tracking-normal">Guestbook</span> !
       </p>
 
@@ -49,7 +47,7 @@ export default function GuestbookPage() {
           <Label className="mb-2 text-2xl tracking-[-.1em] uppercase">
             Message
           </Label>
-          <Suspense>
+          <Suspense fallback={<GBFormLoading/>}>
             <GBForm />
           </Suspense>
           <ul className="pt-7 gap-y-5 flex flex-col">
