@@ -12,7 +12,6 @@ import { revalidatePath } from "next/cache";
 import { Suspense } from "react";
 import { LoadingMessages } from "../components/LoadingState";
 import { unstable_noStore as noStore } from "next/cache";
-import Image from "next/image";
 
 async function getGBEntry() {
   noStore();
