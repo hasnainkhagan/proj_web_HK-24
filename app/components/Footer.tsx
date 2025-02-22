@@ -27,7 +27,7 @@ export function Footer() {
                 </div>
             </ul>
             <p className="GAP mt-2 text-center text-muted-foreground cursor-default capitalize tracking-tighter">
-                &copy; <span className="special text-[.85em]">2024</span> <span className="text-primary">HK.</span> All Rights Reserved.
+                &copy; <span className="special text-[.85em]">2025</span> <span className="text-primary">HK.</span> All Rights Reserved.
             </p>
         </footer>
     );
