@@ -55,7 +55,7 @@ const socialMedia = [
         id: 2,
         icon: github,
         name: "Github",
-        username: "@hasainkhagan",
+        username: "/hasainkhagan",
         link: "https://github.com/hasnainkhagan",
     },
     {
